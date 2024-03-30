@@ -1,0 +1,15 @@
+.binance__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(33, 41, 47);
+}
+
+.binance__wrapper {
+}
+
+.binance__wrapper_top {
+  display: flex;
+}
