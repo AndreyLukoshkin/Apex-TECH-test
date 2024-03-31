@@ -1,34 +1,17 @@
 import './styles.css'
 
-import axios from 'axios'
-
-import React, { useEffect, useState } from 'react'
-
-const TimePeriod = () => {
-  const [time, setTime] = useState('1h')
-
-  useEffect(() => {
-    const fetchCandleData = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=${time}`
-        )
-        console.log(response)
-      } catch (error) {
-        console.error('Error fetching candle data:', error)
-      }
-    }
-
-    fetchCandleData()
-  }, [time])
-
-  const handleTimeChange = (event) => {
+const TimePeriod = ({ time, setTime }) => {
+  const handleTime = (event) => {
     setTime(event.target.value)
   }
 
   return (
-    <div className="selecttime">
-      <select value={time} onChange={handleTimeChange}>
+    <div className="time-period__container">
+      <select
+        className="time-period__container_select"
+        value={time}
+        onChange={handleTime}
+      >
         <option value="1s">1s</option>
         <option value="1m">1m</option>
         <option value="3m">3m</option>

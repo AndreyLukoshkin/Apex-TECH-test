@@ -28,8 +28,8 @@ const Price = () => {
   }, [prevPrice])
 
   return (
-    <div className="price" style={{ color }}>
-      {price}
+    <div className="price__container" style={{ color }}>
+      <p className="price__container_price">{price}</p>
     </div>
   )
 }
