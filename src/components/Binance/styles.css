@@ -9,10 +9,14 @@
 }
 
 .binance__wrapper {
+  width: 60%;
 }
 
 .binance__wrapper_top-part {
   display: flex;
   gap: 20px;
   margin-left: 20px;
+}
+
+.binance__wrapper_bottom-part {
 }

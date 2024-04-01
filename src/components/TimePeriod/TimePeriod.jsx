@@ -1,3 +1,4 @@
+import { ArrWithTime } from '../../constants'
 import './styles.css'
 
 const TimePeriod = ({ time, setTime }) => {
