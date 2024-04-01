@@ -1,43 +1,60 @@
 import './styles.css'
-
-import React from 'react'
-import ReactApexChart from 'react-apexcharts'
+import React, { useEffect, useRef } from 'react'
+import { ColorType, createChart } from 'lightweight-charts'
 
 const CandlestickChart = ({ data }) => {
-  const series = [
-    {
-      data: data.map((candle) => ({
-        x: new Date(candle[0]),
-        y: [
-          parseFloat(candle[1]), // open
-          parseFloat(candle[2]), // high
-          parseFloat(candle[3]), // low
-          parseFloat(candle[4]), // close
-        ],
-      })),
-    },
-  ]
+  const chartContainerRef = useRef()
 
-  const options = {
-    chart: {
-      type: 'candlestick',
-    },
-    xaxis: {
-      type: 'datetime',
-    },
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      chart.applyOptions({ width: chartContainerRef.current.clientWidth })
+    }
 
-  return (
-    <div>
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="candlestick"
-        height={400}
-        width={800}
-      />
-    </div>
-  )
+    const chart = createChart(chartContainerRef.current, {
+      layout: {
+        background: { type: ColorType.Solid, color: 'black' },
+        textColor: 'white',
+      },
+      grid: {
+        vertLines: { color: '#444' },
+        horzLines: { color: '#444' },
+      },
+      width: 600,
+      height: 400,
+    })
+
+    const candleStick = chart.addCandlestickSeries()
+
+    candleStick.setData(
+      data.map((candle) => {
+        // console.log(candle[0])
+        return {
+          time: candle[0] / 1000,
+          open: Number(candle[1]),
+          high: Number(candle[2]),
+          low: Number(candle[3]),
+          close: Number(candle[4]),
+        }
+      })
+    )
+
+    const timeScale = chart.timeScale()
+
+    timeScale.applyOptions({
+      timeVisible: true,
+      secondsVisible: false,
+    })
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+
+      chart.remove()
+    }
+  }, [data])
+
+  return <div ref={chartContainerRef}></div>
 }
 
 export default CandlestickChart

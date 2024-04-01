@@ -12,7 +12,6 @@ const TimePeriod = ({ time, setTime }) => {
         value={time}
         onChange={handleTime}
       >
-        <option value="1s">1s</option>
         <option value="1m">1m</option>
         <option value="3m">3m</option>
         <option value="5m">5m</option>

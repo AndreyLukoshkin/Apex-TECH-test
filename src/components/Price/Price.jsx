@@ -22,6 +22,10 @@ const Price = () => {
       setPrevPrice(currentPrice)
     }
 
+    ws.onping = (e) => {
+      console.log(e, 'ping')
+    }
+
     return () => {
       ws.close()
     }
