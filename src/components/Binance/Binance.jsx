@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
 import './styles.css'
-// import Graphic from '../Graphic/Graphic'
+
 import TimePeriod from '../TimePeriod/TimePeriod'
 import Price from '../Price/Price'
 import CandlestickChart from '../CandlestickChart/CandlestickChart'
 import axios from 'axios'
 
 const Binance = () => {
-  const [time, setTime] = useState('1h')
+  const [time, setTime] = useState('1m')
   const [data, setData] = useState()
 
   useEffect(() => {
@@ -30,11 +30,12 @@ const Binance = () => {
     <div className="binance__container">
       <div className="binance__wrapper">
         <div className="binance__wrapper_top-part">
+          <div>Time</div>
           <TimePeriod time={time} setTime={setTime} />
           <Price />
         </div>
         <div className="binance__wrapper_bottom-part">
-          {data && <CandlestickChart data={data.data} />}
+          {data && <CandlestickChart timeLabel={time} data={data.data} />}
         </div>
       </div>
     </div>
