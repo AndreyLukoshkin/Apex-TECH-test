@@ -30,8 +30,9 @@ const Binance = () => {
     <div className="binance__container">
       <div className="binance__wrapper">
         <div className="binance__wrapper_top-part">
-          <div>Time</div>
+          <p>Time:</p>
           <TimePeriod time={time} setTime={setTime} />
+          BTCUSDT
           <Price />
         </div>
         <div className="binance__wrapper_bottom-part">
