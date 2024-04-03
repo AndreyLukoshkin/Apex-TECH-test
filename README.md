@@ -2,6 +2,11 @@
 
 This project, was builded with: create-react-app, lightweight-charts, axios
 
+# Install npm package of this project
+
+This project was published on npm, u can install package with this project using:
+npm i apex-tech-test
+
 ## Available Scripts
 
 ### `npm install`

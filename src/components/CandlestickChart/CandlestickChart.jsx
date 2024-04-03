@@ -161,7 +161,7 @@ const CandlestickChart = ({ data, timeLabel }) => {
       webSocketKlineCandleStick.close()
       chart.remove()
     }
-  }, [data])
+  }, [data, selectedTimeValue, timeLabel])
 
   return <div ref={chartContainerRef}></div>
 }
