@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 
 import { ColorType, createChart } from 'lightweight-charts'
-import { formatTimeStampToFullDate, timeToLocal } from '../../helpers'
+import { formatTimeStampToFullDate, timeToLocal } from '../../helpers/helper'
 
-import { ArrWithTime } from '../../constants'
+import { ArrWithTime } from '../../constants/constants'
 
 import './styles.css'
 
