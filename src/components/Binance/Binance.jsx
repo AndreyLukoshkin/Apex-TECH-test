@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-
-import './styles.css'
+import axios from 'axios'
 
 import TimePeriod from '../TimePeriod/TimePeriod'
 import Price from '../Price/Price'
 import CandlestickChart from '../CandlestickChart/CandlestickChart'
-import axios from 'axios'
+
+import './styles.css'
 
 const Binance = () => {
   const [time, setTime] = useState('1m')

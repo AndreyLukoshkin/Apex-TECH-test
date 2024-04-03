@@ -1,8 +1,11 @@
-import './styles.css'
 import React, { useEffect, useRef } from 'react'
+
 import { ColorType, createChart } from 'lightweight-charts'
-import { ArrWithTime } from '../../constants'
 import { formatTimeStampToFullDate, timeToLocal } from '../../helpers'
+
+import { ArrWithTime } from '../../constants'
+
+import './styles.css'
 
 const CandlestickChart = ({ data, timeLabel }) => {
   const selectedTimeValue = ArrWithTime.filter(
@@ -84,9 +87,9 @@ const CandlestickChart = ({ data, timeLabel }) => {
         markers.push({
           time: timeToLocal(datesForMarkers[i][0]) / 1000,
           position: 'aboveBar',
-          color: '#e91e63',
+          color: 'red',
           shape: 'arrowDown',
-          id: 'SELLID',
+          // id: 'SELLID',
           text: `Sell $${Math.floor(
             datesForMarkers[i][2] + 2
           )} ${formatTimeStampToFullDate(randomTime)} Size: 3 BTC`,
@@ -95,9 +98,9 @@ const CandlestickChart = ({ data, timeLabel }) => {
         markers.push({
           time: timeToLocal(datesForMarkers[i][0]) / 1000,
           position: 'belowBar',
-          color: '#0ccb81',
+          color: '#1fff1f',
           shape: 'arrowUp',
-          id: 'BUYID',
+          // id: 'BUYID',
           text: `Buy $${Math.floor(
             datesForMarkers[i][3] - 2
           )} ${formatTimeStampToFullDate(randomTime)} Size: 3 BTC`,
