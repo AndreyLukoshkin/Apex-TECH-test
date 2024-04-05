@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-import TimePeriod from '../TimePeriod/TimePeriod'
-import Price from '../Price/Price'
-import CandlestickChart from '../CandlestickChart/CandlestickChart'
+import TimePeriod from '../TimePeriod/TimePeriod.jsx'
+import Price from '../Price/Price.jsx'
+import CandlestickChart from '../CandlestickChart/CandlestickChart.jsx'
 
 import './styles.css'
 

@@ -77,3 +77,41 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
+
+.binance__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(33, 41, 47);
+  color: white;
+  font-size: 17px;
+}
+
+.binance__wrapper {
+  width: 60%;
+}
+
+.binance__wrapper_top-part {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+.binance__wrapper_bottom-part {
+}
+
+.price__container {
+  color: rgb(255, 255, 255);
+}
+
+.time-period__container_select {
+  background-color: #373f46;
+  color: rgb(255, 255, 255);
+  width: 60px;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 0px 7px 0 0;
+}
