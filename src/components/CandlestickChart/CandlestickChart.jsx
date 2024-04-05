@@ -78,6 +78,7 @@ const CandlestickChart = ({ data, timeLabel }) => {
     }
 
     const markers = []
+
     for (let i = 0; i < datesForMarkers.length; i++) {
       const time1 = datesForMarkers[i][0]
       const time2 = datesForMarkers[i][6]
@@ -89,7 +90,6 @@ const CandlestickChart = ({ data, timeLabel }) => {
           position: 'aboveBar',
           color: 'red',
           shape: 'arrowDown',
-          // id: 'SELLID',
           text: `Sell $${Math.floor(
             datesForMarkers[i][2] + 2
           )} ${formatTimeStampToFullDate(randomTime)} Size: 3 BTC`,
@@ -100,14 +100,13 @@ const CandlestickChart = ({ data, timeLabel }) => {
           position: 'belowBar',
           color: '#1fff1f',
           shape: 'arrowUp',
-          // id: 'BUYID',
           text: `Buy $${Math.floor(
             datesForMarkers[i][3] - 2
           )} ${formatTimeStampToFullDate(randomTime)} Size: 3 BTC`,
         })
       }
     }
-    document.getElementById('idBUY')
+
     candleStick.setMarkers(markers)
 
     // < --------------------------------------->
